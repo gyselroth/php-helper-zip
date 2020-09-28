@@ -12,7 +12,8 @@
 
 namespace Gyselroth\Helper;
 
-use Gyselroth\Helper\Exception\ZipException;
+use Gyselroth\HelperLog\LoggerWrapper;
+use Gyselroth\HelperZip\Exception\ZipException;
 use ZipArchive;
 
 class HelperZip
@@ -38,14 +39,14 @@ class HelperZip
     /**
      * Zip all files in given array into new archive
      *
-     * @param  array  $files
-     * @param  string $destinationFile
-     * @param  bool   $overwrite
-     * @param  string $pathFiles
-     * @param  bool   $writeResultFileToSourceFilesPath
-     * @param  bool   $deleteFilesWhenDone
+     * @param array $files
+     * @param string $destinationFile
+     * @param bool $overwrite
+     * @param string $pathFiles
+     * @param bool $writeResultFileToSourceFilesPath
+     * @param bool $deleteFilesWhenDone
      * @return bool|string|null
-     * @throws ZipException
+     * @throws \Exception
      */
     public static function zipFiles(
         array $files,
